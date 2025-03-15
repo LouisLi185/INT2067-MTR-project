@@ -41,8 +41,7 @@ The MTR network is modeled as a graph where:
 - **Dijkstra's Algorithm**: Used for calculating the optimal route between stations
 
 ## File Management
-
-- Journey details are logged in CSV format for data persistence
+                                        `1- Journey details are logged in CSV format for data persistence
 
 ## Project Team (Group 8)
 
@@ -53,4 +52,4 @@ The MTR network is modeled as a graph where:
 
 ## License
 
-[Specify license information if applicable]
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
