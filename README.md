@@ -1,5 +1,3 @@
-[![Open in Visual Studio Code](https://img.shields.io/badge/Open%20in-Visual%20Studio%20Code-blue?logo=visual-studio-code&logoColor=white)](vscode://github.com/LouisLi185/INT2067-MTR-project)
-
 # MTR Journey Planner with Cashback Incentives
 
 A command-line application simulating a smart transit system for the MTR network with integrated cashback incentives.
