@@ -1,5 +1,4 @@
-[![Open in Visual Studio Code](https://github.com/LouisLi185/INT2067-MTR-project.git)/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://github.com/LouisLi185/INT2067-MTR-project.git/online_ide?assignment_repo_id=18612138&assignment_repo_type=AssignmentRepo)
-
+[![Open in Visual Studio Code](https://img.shields.io/badge/Open%20in-Visual%20Studio%20Code-blue?logo=visual-studio-code&logoColor=white)](vscode://vscode.git/clone?url=https://github.com/LouisLi185/INT2067-MTR-project)
 
 # MTR Journey Planner with Cashback Incentives
 
