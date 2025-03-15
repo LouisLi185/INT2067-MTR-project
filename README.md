@@ -40,15 +40,14 @@ The MTR network is modeled as a graph where:
 
 - **Dijkstra's Algorithm**: Used for calculating the optimal route between stations
 
-## File Management
-                                        `1- Journey details are logged in CSV format for data persistence
 
 ## Project Team (Group 8)
 
 - Gong Da (11536511)
 - Li Haolin (11536573)
-- Liu Chenghao (11536559)
 - Chan Kaman (11552292)
+- Liu Chenghao (11536559)
+  
 
 ## License
 
