@@ -138,6 +138,8 @@ def min_route(start, end):
     return float('inf'), []
 
 def fee_caculate(start_station, end_station, row, row_iter):
+    pass # Revise Later
+'''
     """
     'row' is for replenish csv row
     'row_iter' is for replenish iteration
@@ -168,8 +170,4 @@ def fee_caculate(start_station, end_station, row, row_iter):
             next_row = next(row_iter)
         except StopIteration:
             continue
-
-pass #NOT FINISH YET
-
-
-
+'''
