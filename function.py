@@ -1,4 +1,5 @@
 import heapq
+import csv
 
 # Use the converter result to use dic to store the graph
 MTR_map = {
@@ -136,8 +137,39 @@ def min_route(start, end):
     # If the destination is not reachable, return infinity and an empty path
     return float('inf'), []
 
-def fee_caculate(start_station, end_station):
-    pass
-    #TODO
+def fee_caculate(start_station, end_station, row, row_iter):
+    """
+    'row' is for replenish csv row
+    'row_iter' is for replenish iteration
+    To save time and make everything clear, I replace
+
+    'for row in row_iter:
+        if len(row) < 5:
+            continue'
+
+    If needed, you could add them back and delete this supplement.
+    """
+    # Read CSV file to get basic info
+    with open("data/mtr_lines_fares.csv", 'r', encoding='utf-8') as file:
+        reader = csv.reader(file)
+    # Find the first column of the start_station
+    if row[0] == start_station:
+        # Check if the end_station match the first one (will do iteration later!)
+        if row[2] == end_station:
+            return row[4]
+    
+    """
+    We are now in the iteration. According to the CSV file, there is only 94 stations options left.
+    The traversal(遍歷) process will be much simpler.
+    What should do is to traverse the next 94 lines.
+    """
+    for _ in range(94):
+        try:
+            next_row = next(row_iter)
+        except StopIteration:
+            continue
+
+pass #NOT FINISH YET
+
 
 
