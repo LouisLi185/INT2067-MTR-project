@@ -1,4 +1,4 @@
-# MTR Journey Planner with Cashback Incentives
+# 🚇MTR Journey Planner with Cashback Incentives🚇
 
 A command-line application simulating a smart transit system for the MTR network with integrated cashback incentives.
 
@@ -20,7 +20,7 @@ This application models the MTR network using a graph-based data structure where
 
 ### Prerequisites
 
-[List any prerequisites or dependencies here]
+Login
 
 ### Installation
 
