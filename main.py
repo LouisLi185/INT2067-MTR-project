@@ -1,11 +1,10 @@
 import csv
-import json
-from pathlib import Path
-from function import min_route, fee_calculate
+from function import min_route, fee_caculate
+
 
 # User class for managing user information and authentication.
 class User:
-    def __init__(self, username: str, password: str=None):
+    def __init__(self, username: str, password: str):
         self.username = username
         self.password = password
 
@@ -13,6 +12,72 @@ class User:
 
         # Authenticates the user by comparing with the stored username and password.
         return self.username == username and self.password == password
+
+    @staticmethod
+    def welcome_message():
+        # print welcome message
+        print("=" * 50)
+        print("🚇  Welcome to the Metro Travel Planner  🚇".center(50))
+        print("=" * 50)
+        print("\nThis system allows you to register and log in to plan your metro journeys efficiently.")
+
+    @staticmethod
+    def default_users():
+        #create a json file and upload several existing users for demonstration for login
+        users = {
+            "louis": "12345",
+            "gongda": "54321"
+        }
+
+        path = Path('users.json')
+        contents = json.dumps(users)
+        path.write_text(contents)
+
+
+
+    @staticmethod
+    def register():
+        print("\n** Register **")
+        path = Path('users.json')
+        contents = path.read_text()
+        users = json.loads(contents)
+
+        while True:
+            username = input("Enter a new username: ").strip()
+            password = input("Enter a password: ").strip()
+            users[username] = password  # load into the dictionary
+
+            path = Path('users.json')
+            contents = json.dumps(users)
+            path.write_text(contents)
+
+            print("Registration successful! You can now log in.")
+            break  # finish registering
+
+    @staticmethod
+    def log_in():
+        print("\n** Log In **")
+        path = Path('users.json')
+        contents = path.read_text()
+        users = json.loads(contents)
+
+        while True:
+            username = input("Enter your username: ").strip()
+
+            # If the username is "admin", log in directly without a password
+            if username == "admin":
+                print("Admin login successful! ")
+                return User(username)
+
+            password = input("Enter your password: ").strip()
+
+            # Check that the username and password match
+            if username in users and users[username] == password:
+                print("Login successful!")
+                return User(username)   # login successful, return
+            else:
+                print("Invalid username or password. Please try again.")
+
 
     @staticmethod
     def welcome_message():
@@ -108,47 +173,19 @@ def log_journey(journey: Journey):
                          journey.fee])
 
 
-
 def main():
-    User.welcome_message()
-    User.default_users()
+    # Initialize a sample user (this can be extended to a proper user database).
+    user = User("admin", "password")
 
-    user = None        # initialize user variable
-
-    while user is None:
-        print("\n1. Log In")
-        print("2. Register")
-        choice = input("Choose an option (1/2): ").strip()
-
-        if choice == "1":
-            if User.log_in():  # only when the login is successful will the loop be exited and the program will continue
-                break
-        elif choice == "2":
-            User.register()
-        else:
-            print("Invalid choice, please enter 1 or 2.")
-
-
-
-    #while True:
-    #    # Initialize a sample user (this can be extended to a proper user database).
-    #user = User("admin", "password")
-    #    # Prompt the user for login credentials.
-    #    input_username = input("Enter username: ")
-    #    input_password = input("Enter password: ")
-    #    if user.authenticate(input_username, input_password):
-    #        print("Authentication successful!")
-    #        break
-    #    else:
-    #        print("Invalid username or password, please try again.")
-
+    # Prompt the user for login credentials.
+    input_username = input("Enter username: ")
+    input_password = input("Enter password: ")
 
     # Check if the provided credentials are correct.
-   #if not user.authenticate(input_username, input_password):
-   #    print("Authentication failed!")
-   #    return
-   #print("Authentication successful!")
-
+    if not user.authenticate(input_username, input_password):
+        print("Authentication failed!")
+        return
+    print("Authentication successful!")
 
     total_expense = 0  # Variable to keep track of the total fee for the session.
 
@@ -162,8 +199,8 @@ def main():
         distance, path = min_route(start_station, end_station)
         print(f"Path:", " -> ".join(path))
 
-        # Calculate the fee for the journey using the imported fee_calculate function.
-        fee = fee_calculate(start_station, end_station)
+        # Calculate the fee for the journey using the imported fee_caculate function.
+        fee = fee_caculate(start_station, end_station)
         print(f"Calculated fee: {fee}")
 
         # Create a new journey record.
