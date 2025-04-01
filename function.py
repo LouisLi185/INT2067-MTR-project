@@ -137,7 +137,7 @@ def min_route(start, end):
     # If the destination is not reachable, return infinity and an empty path
     return float('inf'), []
 
-def fee_caculate(start_station, end_station):
+def fee_calculate(start_station, end_station):
     # Open and read the CSV file
     with open("data/mtr_lines_fares.csv", newline='', encoding='utf-8') as file:
         reader = csv.DictReader(file)
