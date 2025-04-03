@@ -71,7 +71,7 @@ This application models the MTR network using a graph-based data structure where
 
 - Gong Da (11536511)
 - Li Haolin (11536573)
-- Chan Kaman (11552292)
+- Chan Ka Man (11552292)
 - Liu Chenghao (11536559)
 
 ---
