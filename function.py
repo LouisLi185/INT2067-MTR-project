@@ -98,6 +98,8 @@ MTR_map = {
     'Lei Tung': {'South Horizons': 1, 'Wong Chuk Hang': 1},
     'Wong Chuk Hang': {'Lei Tung': 1, 'Ocean Park': 1},
     'Ocean Park': {'Wong Chuk Hang': 1, 'Admiralty': 1},
+    'EdUHK':{"Los Angles":1},
+    "Los Angles":{"Pacific Ocean":1}
 
 }
 

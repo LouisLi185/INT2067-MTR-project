@@ -185,6 +185,7 @@ def main():
                 break  # exit the current while True and return to the main loop to continue the new journey
             else:
                 print(f"Total expense for this session: {total_expense}.")
+                print(f"Cash back is {((total_expense - 400) / 3):.2f}.")
                 exit()
 
 
