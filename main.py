@@ -184,8 +184,12 @@ def main():
             if more == 'y':
                 break  # exit the current while True and return to the main loop to continue the new journey
             else:
-                print(f"Total expense for this session: {total_expense}.")
-                print(f"Cash back is {((total_expense - 400) / 3):.2f}.")
+                print(f"\nTotal expense for this session: {total_expense}.")
+                cash_back = (total_expense - 400) / 3
+                if cash_back > 0:
+                    print(f"Cash back is {cash_back:.2f}.")
+                else:
+                    print("Sorry, you don't have cash back")
                 exit()
 
 
