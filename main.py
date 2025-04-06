@@ -58,12 +58,23 @@ class User:
                 continue
             password = input("Enter a password: ").strip()
             # New: ask for gender and age
-            gender = input("Enter your gender (male/female): ").strip().lower()  # simple english comment
-            try:
-                age = int(input("Enter your age: ").strip())  # simple english comment
-            except ValueError:
-                print("Invalid age. Please enter a number.")
-                continue
+            # Print an error message when the input is invalid and let user re-enter the gender
+            while True:
+                gender = input("Enter your gender (m/f): ").strip().lower()  # simple english comment
+                if gender not in ["m", "f"]:
+                    print("Invalid gender. Please try again.")
+                    continue
+                else:
+                    break
+
+            # Print an error message when the input is invalid and let user re-enter the age
+            while True:
+                try:
+                    age = int(input("Enter your age: ").strip())  # simple english comment
+                    break
+                except ValueError:
+                    print("Invalid age. Please enter a number.")
+                    continue
 
             # Store user info into the dictionary
             users[username] = {
