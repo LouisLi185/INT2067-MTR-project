@@ -79,7 +79,7 @@ This application models the MTR network using a graph-based data structure where
 
 ## Requirements
 
-- **Python 3.13.0**
+- **Python 3.13.0 or above**
 
 ### Python Packages
 **Install** the `requirements.txt` to install the relevant support.
