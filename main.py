@@ -60,8 +60,8 @@ class User:
             # New: ask for gender and age
             # Print an error message when the input is invalid and let user re-enter the gender
             while True:
-                gender = input("Enter your gender (m/f): ").strip().lower()  # simple english comment
-                if gender not in ["m", "f"]:
+                gender = input("Enter your gender (male/female): ").strip().lower()  # simple english comment
+                if gender not in ["male", "female"]:
                     print("Invalid gender. Please try again.")
                     continue
                 else:
